@@ -1,7 +1,18 @@
 $(function(){
+	function navScrl(section){
+		var pos = $(section).offset().top-100;
+		$('html, body').stop().animate({'scrollTop':pos},500);
+	}
+
 	$('.nav2').on('click', function(){
-		$('html, body').animate({
-			scrollTop : $('.profile').offset().top
-		},500);
+		navScrl('.mainpage');
+	});
+
+	$('.nav2').on('click', function(){
+		navScrl('.profile');
+	});
+
+	$('.nav3').on('click', function(){
+		navScrl('.project');
 	});
 });
